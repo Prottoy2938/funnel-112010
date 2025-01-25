@@ -20,11 +20,11 @@
     <meta name="robots" content="noindex, nofollow">
 
 	<!-- This site is optimized with the Yoast SEO plugin v18.8 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Quantum Growth™ By King Kong | FREE Training [Watch Now]</title>
+	<title>Bigtower Studio | FREE Training [Watch Now]</title>
 	<meta name="description" content="Quantum Growth™ is a 6-week training program that teaches you how to rapidly scale your service business to 7-figures, FAST!">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Quantum Growth™ By King Kong | FREE Training [Watch Now]">
+	<meta property="og:title" content="Bigtower Studio | FREE Training [Watch Now]">
 	<meta property="og:description" content="Quantum Growth™ is a 6-week training program that teaches you how to rapidly scale your service business to 7-figures, FAST!">
 	<meta property="og:url" content="https://kingkong.co/qg-power/">
 	<meta property="og:site_name" content="King Kong">
@@ -59,7 +59,7 @@
 	            "@type": "WebPage",
 	            "@id": "https://kingkong.co/qg-power/#webpage",
 	            "url": "https://kingkong.co/qg-power/",
-	            "name": "Quantum Growth™ By King Kong | FREE Training [Watch Now]",
+	            "name": "Bigtower Studio | FREE Training [Watch Now]",
 	            "isPartOf": {
 	                "@id": "https://kingkong.co/#website"
 	            },
@@ -1556,36 +1556,28 @@ PTVideoTriggers.listen({
 </script>
     </div><div class="col-12">
     <script>
-function getFormattedDate(date) {
+function getFormattedDateArabic(date) {
     date = date || new Date();
     const day = date.getDate();
     const monthIndex = date.getMonth();
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    const year = date.getFullYear();
+    const monthNamesArabic = [
+        "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+        "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
     ];
-    const suffixes = ["st", "nd", "rd", "th"];
-    let suffix;
 
-    if (day >= 11 && day <= 13) {
-        suffix = "th";
-    } else {
-        suffix = suffixes[(day - 1) % 10] || "th";
-    }
-
-    // Wrap suffix in <sup> tags
-    suffix = `<sup>${suffix}</sup>`;
-
-    return `${monthNames[monthIndex]} ${day}${suffix}`;
+    // Format: DD/MM/YYYY with Arabic month names
+    return `${day} ${monthNamesArabic[monthIndex]} ${year}`;
 }
 
-document.querySelectorAll('.today-suffix').forEach(function(selected){
-    selected.innerHTML = getFormattedDate();
+document.querySelectorAll('.today-suffix').forEach(function(selected) {
+    selected.innerHTML = getFormattedDateArabic();
 });
 
-document.querySelectorAll('.days-42-suffix').forEach(function(selected){
+document.querySelectorAll('.days-42-suffix').forEach(function(selected) {
     const today = new Date();
     const futureDate = new Date(today.getTime() + (42 * 24 * 60 * 60 * 1000));
-    selected.innerHTML = getFormattedDate(futureDate);
+    selected.innerHTML = getFormattedDateArabic(futureDate);
 });
 
 </script>
